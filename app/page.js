@@ -6,7 +6,7 @@ import QRCode from 'react-qr-code';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Phone, Mail, Calendar, Share2, Facebook, Instagram, ExternalLink, ArrowRight, Info, User, MapPin, Youtube, UserPlus, QrCode, X } from 'lucide-react';
 import { FaWhatsapp, FaTiktok, FaYoutube } from 'react-icons/fa';
-
+import { MdVerified } from "react-icons/md";
 export default function PremiumCard() {
   const [mounted, setMounted] = useState(false);
   const [showCopiedAlert, setShowCopiedAlert] = useState(false);
@@ -178,9 +178,8 @@ export default function PremiumCard() {
                 transition={{ duration: 0.3 }}
                 className="space-y-4"
               >
-                <p className="text-center text-gray-600 mb-6">
-                אתכם כל הדרך לעסקה מוצלחת                 </p>
-                
+                <p className="text-center text-gray-600 mb-2">מספר רישיון תיווך</p>
+                <p className="flex items-center justify-center gap-1 text-gray-600 font-bold mb-6"> <MdVerified className="text-blue-500 h-4 w-4" />3226326</p>
                 <a
                   href="tel:+972525729333"
                   className="flex items-center gap-4 p-4 rounded-2xl bg-gradient-to-r from-blue-50 to-blue-100 shadow-sm hover:shadow-md transition-shadow"

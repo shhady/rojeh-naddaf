@@ -38,18 +38,12 @@ export const metadata = {
     description: 'הבחירה הנכונה בעולם הנדל״ן \nכרטיס ביקור דיגיטלי',
     images: [
       {
-        url: '/rojeh-profile.jpg',
+        url: '/og-image.png',
         width: 1200,
         height: 630,
         alt: 'רוג\'יה נדאף, יועץ ומשווק נדל״ן'
       }
     ]
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'רוג\'יה נדאף | יועץ ומשווק נדל״ן',
-    description: 'הבחירה הנכונה בעולם הנדל״ן \nכרטיס ביקור דיגיטלי',
-    images: ['/rojeh-profile.jpg']
   }
 };
 
