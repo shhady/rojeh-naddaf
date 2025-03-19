@@ -421,47 +421,52 @@ export default function PremiumCard() {
       {/* QR Code Modal */}
       <AnimatePresence>
         {showQrModal && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={toggleQrModal}
-            className="fixed inset-0 bg-gray-900 bg-opacity-20s flex items-center justify-center p-4 z-50"
-          >
+          <>
+            {/* Semi-transparent backdrop */}
+            <div 
+              className="fixed inset-0 bg-black/40 backdrop-blur-[1px] z-40"
+              onClick={toggleQrModal}
+            ></div>
+            
+            {/* Modal content */}
             <motion.div
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
-              onClick={(e) => e.stopPropagation()}
-              className="bg-white rounded-2xl p-6 shadow-2xl max-w-xs w-full mx-auto relative"
+              className="fixed inset-0 flex items-center justify-center p-4 z-50 pointer-events-none"
             >
-              <button 
-                onClick={toggleQrModal}
-                className="absolute top-2 right-2 text-gray-500 hover:text-gray-800 transition-colors"
+              <div 
+                className="bg-white rounded-2xl p-6 shadow-2xl max-w-xs w-full mx-auto relative pointer-events-auto"
+                onClick={(e) => e.stopPropagation()}
               >
-                <X className="h-6 w-6" />
-              </button>
-              
-              <div className="text-center mb-4">
-                <h3 className="text-lg font-bold text-gray-900 mb-1">קוד QR</h3>
-                <p className="text-sm text-gray-600">סרקו כדי לשמור את פרטי הקשר</p>
-              </div>
-              
-              {mounted && (
-                <div className="p-4 bg-white rounded-2xl shadow-md border border-gray-100 mx-auto max-w-[200px]">
-                  <QRCode 
-                    value={typeof window !== 'undefined' ? window.location.href : 'https://example.com'} 
-                    size={180}
-                    className="rounded-xl"
-                  />
+                <button 
+                  onClick={toggleQrModal}
+                  className="absolute top-2 right-2 text-gray-500 hover:text-gray-800 transition-colors"
+                >
+                  <X className="h-6 w-6" />
+                </button>
+                
+                <div className="text-center mb-4">
+                  <h3 className="text-lg font-bold text-gray-900 mb-1">קוד QR</h3>
+                  <p className="text-sm text-gray-600">סרקו כדי לשמור את פרטי הקשר</p>
                 </div>
-              )}
-              
-              <p className="text-sm text-gray-500 text-center mt-4">
-                סרקו את הקוד באמצעות המצלמה בטלפון הנייד
-              </p>
+                
+                {mounted && (
+                  <div className="p-4 bg-white rounded-2xl shadow-md border border-gray-100 mx-auto max-w-[200px]">
+                    <QRCode 
+                      value={typeof window !== 'undefined' ? window.location.href : 'https://example.com'} 
+                      size={180}
+                      className="rounded-xl"
+                    />
+                  </div>
+                )}
+                
+                <p className="text-sm text-gray-500 text-center mt-4">
+                  סרקו את הקוד באמצעות המצלמה בטלפון הנייד
+                </p>
+              </div>
             </motion.div>
-          </motion.div>
+          </>
         )}
       </AnimatePresence>
 
