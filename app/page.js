@@ -124,6 +124,7 @@ export default function PremiumCard() {
         <div className="mt-24 text-center px-6">
           <h1 className="text-2xl font-bold text-gray-900">רוג&apos;יה נדאף</h1>
           <p className="text-gray-600 mt-1">יועץ ומשווק נדל״ן</p>
+          <p className="text-center text-gray-600 mb-2 flex items-center justify-center gap-2">מספר רישיון תיווך: <span className="font-bold">3226326</span></p>
           <a 
             href="https://www.waze.com/ul?ll=32.80137366436421%2C34.99441736811734&navigate=yes" 
             target="_blank" 
@@ -178,8 +179,7 @@ export default function PremiumCard() {
                 transition={{ duration: 0.3 }}
                 className="space-y-4"
               >
-                <p className="text-center text-gray-600 mb-2">מספר רישיון תיווך</p>
-                <p className="flex items-center justify-center gap-1 text-gray-600 font-bold mb-6"> <MdVerified className="text-blue-500 h-4 w-4" />3226326</p>
+              
                 <a
                   href="tel:+972525729333"
                   className="flex items-center gap-4 p-4 rounded-2xl bg-gradient-to-r from-blue-50 to-blue-100 shadow-sm hover:shadow-md transition-shadow"
@@ -309,8 +309,8 @@ export default function PremiumCard() {
                 transition={{ duration: 0.3 }}
                 className="space-y-6"
               >
-                <p className="text-center text-gray-600 mb-6">
-                  עקבו אחריי ברשתות החברתיות
+                <p className="text-center text-gray-600 mb-6 flex items-center justify-center gap-2">
+                  עקבו אחריי ברשתות החברתיות <MdVerified className="text-blue-500 h-4 w-4" />
                 </p>
                 
                 <div className="grid grid-cols-2 gap-4">
