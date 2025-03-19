@@ -22,7 +22,7 @@ export const metadata = {
     default: "רוג'יה נדאף | יועץ ומשווק נדל״ן",
     template: "%s | רוג'יה נדאף"
   },
-  description: "הבחירה הנכונה בעולם הנדל״ן \nכרטיס  ביקור דיגיטלי",
+  description: "הבחירה הנכונה בעולם הנדל״ן \nכרטיס ביקור דיגיטלי",
   keywords: "נדל״ן, יועץ נדל״ן, רוג'יה נדאף, רימקס, סוכן נדל״ן חיפה, נכסים למכירה, חיפה",
   manifest: "/manifest.json",
   icons: {
@@ -35,7 +35,7 @@ export const metadata = {
     locale: 'he_IL',
     url: 'https://rojeh-naddaf.vercel.app/',
     title: 'רוג\'יה נדאף | יועץ ומשווק נדל״ן',
-    description: 'הבחירה הנכונה בעולם הנדל״ן \nכרטיס  ביקור דיגיטלי',
+    description: 'הבחירה הנכונה בעולם הנדל״ן \nכרטיס ביקור דיגיטלי',
     images: [
       {
         url: '/rojeh-profile.jpg',
@@ -48,7 +48,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'רוג\'יה נדאף | יועץ ומשווק נדל״ן',
-    description: 'הבחירה הנכונה בעולם הנדל״ן \nכרטיס  ביקור דיגיטלי',
+    description: 'הבחירה הנכונה בעולם הנדל״ן \nכרטיס ביקור דיגיטלי',
     images: ['/rojeh-profile.jpg']
   }
 };

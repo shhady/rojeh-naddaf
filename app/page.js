@@ -4,13 +4,14 @@ import Image from 'next/image';
 import Link from 'next/link';
 import QRCode from 'react-qr-code';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Phone, Mail, Calendar, Share2, Facebook, Instagram, ExternalLink, ArrowRight, Info, User, MapPin, Youtube, UserPlus } from 'lucide-react';
+import { Phone, Mail, Calendar, Share2, Facebook, Instagram, ExternalLink, ArrowRight, Info, User, MapPin, Youtube, UserPlus, QrCode, X } from 'lucide-react';
 import { FaWhatsapp, FaTiktok, FaYoutube } from 'react-icons/fa';
 
 export default function PremiumCard() {
   const [mounted, setMounted] = useState(false);
   const [showCopiedAlert, setShowCopiedAlert] = useState(false);
   const [activeTab, setActiveTab] = useState('contact');
+  const [showQrModal, setShowQrModal] = useState(false);
   
   // For client-side rendering only
   useEffect(() => {
@@ -71,6 +72,10 @@ export default function PremiumCard() {
 
   const handleTabChange = (tab) => {
     setActiveTab(tab);
+  };
+
+  const toggleQrModal = () => {
+    setShowQrModal(!showQrModal);
   };
 
   return (
@@ -156,14 +161,6 @@ export default function PremiumCard() {
               }`}
             >
               מדיה חברתית
-            </button>
-            <button 
-              onClick={() => handleTabChange('qr')}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
-                activeTab === 'qr' ? 'bg-purple-100 text-purple-700' : 'text-gray-500 hover:bg-gray-100'
-              }`}
-            >
-              QR CODE
             </button>
           </div>
         </div>
@@ -368,36 +365,6 @@ export default function PremiumCard() {
                 </div>
               </motion.div>
             )}
-
-            {/* QR Code Tab */}
-            {activeTab === 'qr' && (
-              <motion.div 
-                key="qr"
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.3 }}
-                className="flex flex-col items-center justify-center space-y-4"
-              >
-                <p className="text-center text-gray-600 mb-2">
-                  סרקו לשמירת פרטי הקשר
-                </p>
-                
-                {mounted && (
-                  <div className="p-4 bg-white rounded-2xl shadow-lg border border-gray-100">
-                    <QRCode 
-                      value={typeof window !== 'undefined' ? window.location.href : 'https://example.com'} 
-                      size={180}
-                      className="rounded-xl"
-                    />
-                  </div>
-                )}
-                
-                <p className="text-sm text-gray-500 max-w-xs text-center mt-2">
-                  סרקו את הקוד באמצעות המצלמה בטלפון הנייד כדי לשמור את פרטי הקשר
-                </p>
-              </motion.div>
-            )}
           </div>
         </AnimatePresence>
 
@@ -430,6 +397,19 @@ export default function PremiumCard() {
               <span>{showCopiedAlert ? 'הקישור הועתק בהצלחה!' : 'שיתוף כרטיס הביקור'}</span>
             </div>
           </motion.button>
+
+          <motion.button
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6 }}
+            onClick={toggleQrModal}
+            className="block w-full text-center border border-gray-200 bg-white text-gray-700 py-3.5 px-4 rounded-xl font-medium transition-all hover:bg-gray-50 hover:shadow-md"
+          >
+            <div className="flex items-center justify-center gap-2">
+              <QrCode className="h-5 w-5" />
+              <span>QR CODE</span>
+            </div>
+          </motion.button>
         </div>
 
         {/* Footer */}
@@ -437,6 +417,53 @@ export default function PremiumCard() {
           <p className="text-center text-gray-500 text-sm">© {new Date().getFullYear()} רוג&apos;יה נדאף | יועץ ומשווק נדל&quot;ן</p>
         </div>
       </motion.div>
+
+      {/* QR Code Modal */}
+      <AnimatePresence>
+        {showQrModal && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={toggleQrModal}
+            className="fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center p-4 z-50"
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              onClick={(e) => e.stopPropagation()}
+              className="bg-white rounded-2xl p-6 shadow-2xl max-w-xs w-full mx-auto relative"
+            >
+              <button 
+                onClick={toggleQrModal}
+                className="absolute top-2 right-2 text-gray-500 hover:text-gray-800 transition-colors"
+              >
+                <X className="h-6 w-6" />
+              </button>
+              
+              <div className="text-center mb-4">
+                <h3 className="text-lg font-bold text-gray-900 mb-1">קוד QR</h3>
+                <p className="text-sm text-gray-600">סרקו כדי לשמור את פרטי הקשר</p>
+              </div>
+              
+              {mounted && (
+                <div className="p-4 bg-white rounded-2xl shadow-md border border-gray-100 mx-auto max-w-[200px]">
+                  <QRCode 
+                    value={typeof window !== 'undefined' ? window.location.href : 'https://example.com'} 
+                    size={180}
+                    className="rounded-xl"
+                  />
+                </div>
+              )}
+              
+              <p className="text-sm text-gray-500 text-center mt-4">
+                סרקו את הקוד באמצעות המצלמה בטלפון הנייד
+              </p>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Notification */}
       {showCopiedAlert && (
