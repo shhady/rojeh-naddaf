@@ -252,7 +252,7 @@ export default function PremiumCard() {
                     רוצים למצוא את הבית הבא שלכם או למכור נכס בתנאים הטובים ביותר⁉ אני כאן בשבילכם‼
                   </p>
                   <p className="text-center text-gray-500 mt-3 text-sm">
-                    רימקס סלקטד חיפה. הבחירה הנכונה בעולם הנדל"ן🥇
+                    רימקס סלקטד חיפה. הבחירה הנכונה בעולם הנדל&quot;ן🥇
                   </p>
                 </div>
               </motion.div>
@@ -377,7 +377,7 @@ export default function PremiumCard() {
 
         {/* Footer */}
         <div className="py-4 bg-gradient-to-r from-gray-50 to-gray-100 border-t border-gray-200">
-          <p className="text-center text-gray-500 text-sm">© {new Date().getFullYear()} רוג'ה נדאף | יועץ ומשווק נדל"ן</p>
+          <p className="text-center text-gray-500 text-sm">© {new Date().getFullYear()} רוג&apos;ה נדאף | יועץ ומשווק נדל&quot;ן</p>
         </div>
       </motion.div>
 
