@@ -1,8 +1,8 @@
 {
   "name": "רוג'יה נדאף | יועץ ומשווק נדל״ן",
   "short_name": "רוג'יה נדאף",
-  "description": "כרטיס ביקור דיגיטלי מקצועי עבור רוג'יה נדאף, יועץ הנדל״ן האמין שלך.",
-  "start_url": "/",
+    "description": "אתכם כל הדרך לעסקה מוצלחת",
+    "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#4f46e5",
