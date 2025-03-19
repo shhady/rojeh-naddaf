@@ -391,7 +391,7 @@ export default function PremiumCard() {
 
         {/* Footer */}
         <div className="py-4 bg-gradient-to-r from-gray-50 to-gray-100 border-t border-gray-200">
-          <p className="text-center text-gray-500 text-sm">© {new Date().getFullYear()} רוג&apos;ה נדאף | יועץ ומשווק נדל&quot;ן</p>
+          <p className="text-center text-gray-500 text-sm">© {new Date().getFullYear()} רוג&apos;יה נדאף | יועץ ומשווק נדל&quot;ן</p>
         </div>
       </motion.div>
 
