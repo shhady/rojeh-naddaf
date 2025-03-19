@@ -1,7 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import { Heebo } from "next/font/google";
 import "./globals.css";
-import { metadata as siteMetadata } from "./metadata";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,9 +17,47 @@ const heebo = Heebo({
   variable: "--font-heebo",
 });
 
-// Use the imported metadata
-export const metadata = siteMetadata;
 
+export const metadata = {
+  title: "רוג'יה נדאף | יועץ ומשווק נדל״ן \n כרטיס ביקור דיגיטלי",
+  description: 'אתכם כל הדרך לעסקה מוצלחת',
+  manifest: '/site.webmanifest',
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_BASE_URL || 'https://rojeh-nadaf.vercel.app'
+  ),
+  keywords: [
+    'נדל״ן',
+    'יצירת נדל״ן',
+    'מכירה נדל״ן',
+    'רוג\'יה נדאף',
+    'רימקס',
+    'סוכן נדל״ן חיפה',
+    'נכסים למכירה',
+    'חיפה',
+  ],
+  authors: [{ name: 'Shhady Serhan' }],
+  creator: 'Shhady Serhan',
+  openGraph: {
+    title: 'רוג\'יה נדאף | יועץ ומשווק נדל״ן \n כרטיס ביקור דיגיטלי',
+    description: 'אתכם כל הדרך לעסקה מוצלחת',
+    url: '/',
+    siteName: 'רוג\'יה נדאף | יועץ ומשווק נדל״ן \n כרטיס ביקור דיגיטלי',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+          alt: 'תמונת כיסוי',
+      },
+    ],
+    locale: 'he_IL',
+    type: 'website',
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
 export default function RootLayout({ children }) {
   return (
     <html lang="he" dir="rtl">
@@ -33,30 +70,7 @@ export default function RootLayout({ children }) {
         <link rel="manifest" href="/site.webmanifest" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
         <meta name="theme-color" content="#4f46e5" />
-        
-        {/* Explicit Open Graph tags for social sharing */}
-        <meta property="og:title" content="רוג'יה נדאף | יועץ ומשווק נדל״ן" />
-        <meta property="og:description" content="אתכם כל הדרך לעסקה מוצלחת" />
-        <meta property="og:image" content="https://rojeh-nadaf.vercel.app/og-image.png" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta property="og:url" content="https://rojeh-nadaf.vercel.app" />
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="רוג'יה נדאף" />
-        
-        {/* Facebook specific meta tags */}
-        <meta property="fb:app_id" content="your-fb-app-id-if-you-have-one" />
-        
-        {/* Instagram and additional sharing meta tags */}
-        <meta property="og:image:secure_url" content="https://rojeh-nadaf.vercel.app/og-image.png" />
-        <meta property="og:image:type" content="image/png" />
-        <meta property="og:locale" content="he_IL" />
-        
-        {/* Twitter card data - sometimes helps with Instagram */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="רוג'יה נדאף | יועץ ומשווק נדל״ן" />
-        <meta name="twitter:description" content="אתכם כל הדרך לעסקה מוצלחת" />
-        <meta name="twitter:image" content="https://rojeh-nadaf.vercel.app/og-image.png" />
+        <meta property="og:site_name" content="רוג'יה נדאף | יועץ ומשווק נדל״ן \n כרטיס ביקור דיגיטלי" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${heebo.variable} antialiased`}

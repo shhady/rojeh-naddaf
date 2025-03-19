@@ -1,5 +1,5 @@
 export const metadata = {
-  title: 'רוג\'יה נדאף | יועץ ומשווק נדל״ן',
+  title: 'רוג\'יה נדאף | יועץ ומשווק נדל״ן \n כרטיס ביקור דיגיטלי',
   description: 'אתכם כל הדרך לעסקה מוצלחת',
   manifest: '/site.webmanifest',
   metadataBase: new URL(
@@ -17,7 +17,7 @@ export const metadata = {
   authors: [{ name: 'Shhady Serhan' }],
   creator: 'Shhady Serhan',
   openGraph: {
-    title: 'רוג\'יה נדאף | יועץ ומשווק נדל״ן',
+    title: 'רוג\'יה נדאף | יועץ ומשווק נדל״ן \n כרטיס ביקור דיגיטלי',
     description: 'אתכם כל הדרך לעסקה מוצלחת',
     url: '/',
     siteName: 'רוג\'יה נדאף | יועץ ומשווק נדל״ן',
@@ -34,7 +34,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'רוג\'יה נדאף | יועץ ומשווק נדל״ן',
+    title: 'רוג\'יה נדאף | יועץ ומשווק נדל״ן \n כרטיס ביקור דיגיטלי',
     description: 'אתכם כל הדרך לעסקה מוצלחת',
     images: ['/og-image.png'],
   },
