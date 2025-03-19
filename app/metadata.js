@@ -1,37 +1,42 @@
 export const metadata = {
-  title: 'Rojeh Naddaf | Real Estate Consultant',
-  description: 'Professional real estate consulting and marketing services',
+  title: 'רוג\'יה נדאף | יועץ ומשווק נדל״ן',
+  description: 'אתכם כל הדרך לעסקה מוצלחת',
   manifest: '/site.webmanifest',
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_BASE_URL || 'https://rojeh-nadaf.vercel.app'
   ),
   keywords: [
-    'real estate',
-    'property',
-    'consultant',
-    'RE/MAX',
-    'Haifa',
-    'Rojeh Naddaf',
-    'buy property',
-    'sell property'
+    'נדל\"ן',
+    'תיווך',
+    'רימקס',
+    'חיפה',
+    'רוג\'יה נדאף',
+    'רכישת נכס',
+    'מכירת נכס'
   ],
   authors: [{ name: 'Shhady Serhan' }],
   creator: 'Shhady Serhan',
   openGraph: {
-    title: 'Rojeh Naddaf | Real Estate Consultant',
-    description: 'Professional real estate consulting and marketing services',
+    title: 'רוג\'יה נדאף | יועץ ומשווק נדל״ן',
+    description: 'אתכם כל הדרך לעסקה מוצלחת',
     url: '/',
-    siteName: 'Rojeh Naddaf | Real Estate Consultant',
+    siteName: 'רוג\'יה נדאף | יועץ ומשווק נדל״ן',
     images: [
       {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Rojeh Naddaf Real Estate',
+        alt: 'רוג\'יה נדאף - יועץ ומשווק נדל״ן',
       },
     ],
-    locale: 'en_US',
+    locale: 'he_IL',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'רוג\'יה נדאף | יועץ ומשווק נדל״ן',
+    description: 'אתכם כל הדרך לעסקה מוצלחת',
+    images: ['/og-image.png'],
   },
   robots: {
     index: true,
