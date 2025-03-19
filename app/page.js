@@ -1,103 +1,194 @@
+'use client'
 import Image from "next/image";
+import { useState, useEffect } from "react";
+import QRCode from "react-qr-code";
+import { Phone, Mail, Send, Share2, Calendar, Copy, ExternalLink, Facebook } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const [mounted, setMounted] = useState(false);
+  const [showCopiedAlert, setShowCopiedAlert] = useState(false);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+  // For client-side rendering only
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const copyToClipboard = () => {
+    if (typeof window !== 'undefined') {
+      navigator.clipboard.writeText(window.location.href);
+      setShowCopiedAlert(true);
+      setTimeout(() => setShowCopiedAlert(false), 2000);
+    }
+  };
+
+  return (
+    <div dir="rtl" className="min-h-screen bg-gray-50 py-10 px-4 sm:px-6">
+      <div className="max-w-md mx-auto bg-white rounded-2xl shadow-lg overflow-hidden">
+        {/* Cover Image */}
+        <div className="relative h-40 w-full">
+          <Image
+            src="/rojeh-cover.jpg"
+            alt="תמונת כריכה"
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
+
+        {/* Profile Image */}
+        <div className="relative flex justify-center">
+          <div className="absolute -top-16 ring-4 ring-white rounded-full overflow-hidden">
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              src="/rojeh-profile.jpg"
+              alt="רוג'ה נדאף"
+              width={128}
+              height={128}
+              className="rounded-full object-cover"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+          </div>
+        </div>
+
+        {/* Personal Information */}
+        <div className="pt-16 pb-10 px-6 text-center">
+          <h1 className="text-2xl font-bold text-gray-900">רוג&apos;ה נדאף</h1>
+          <p className="text-gray-600 mt-1">יועץ נדל״ן</p>
+          <p className="text-sm text-gray-500 mt-2">מוצא את הבית המושלם עבורך</p>
+        </div>
+
+        {/* Contact Options */}
+        <div className="px-6 pb-6 space-y-3">
+          {/* Phone */}
+          <a 
+            href="tel:+972525729333" 
+            className="flex items-center justify-between bg-blue-50 p-3 rounded-xl transition hover:bg-blue-100"
           >
-            Read our docs
+            <div className="flex items-center gap-3">
+              <div className="bg-blue-500 p-2 rounded-full">
+                <Phone className="h-5 w-5 text-white" />
+              </div>
+              <span className="font-medium text-gray-700">טלפון</span>
+            </div>
+            <span className="text-gray-500 text-sm">052-572-9333</span>
+          </a>
+
+          {/* WhatsApp */}
+          <a 
+            href="https://wa.me/972525729333" 
+            className="flex items-center justify-between bg-green-50 p-3 rounded-xl transition hover:bg-green-100"
+          >
+            <div className="flex items-center gap-3">
+              <div className="bg-green-500 p-2 rounded-full">
+                <FaWhatsapp className="h-5 w-5 text-white" />
+              </div>
+              <span className="font-medium text-gray-700">וואטסאפ</span>
+            </div>
+            <span className="text-gray-500 text-sm">שלח הודעה</span>
+          </a>
+
+          {/* Email */}
+          <a 
+            href="mailto:rojeh@example.com" 
+            className="flex items-center justify-between bg-purple-50 p-3 rounded-xl transition hover:bg-purple-100"
+          >
+            <div className="flex items-center gap-3">
+              <div className="bg-purple-500 p-2 rounded-full">
+                <Mail className="h-5 w-5 text-white" />
+              </div>
+              <span className="font-medium text-gray-700">אימייל</span>
+            </div>
+            <span className="text-gray-500 text-sm">rojeh@example.com</span>
           </a>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+        {/* Social Media */}
+        <div className="px-6 pb-6">
+          <h2 className="text-lg font-semibold text-gray-900 mb-3">עקבו אחרי</h2>
+          <div className="flex justify-center items-center gap-5">
+            <a 
+              href="https://www.instagram.com/rojehna_realestate" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="flex flex-col items-center gap-1"
+            >
+              <div className="bg-gradient-to-tr from-yellow-500 via-red-500 to-purple-500 p-3 rounded-full">
+                <ExternalLink className="h-5 w-5 text-white" />
+              </div>
+              <span className="text-xs text-gray-500">אינסטגרם</span>
+            </a>
+            
+            <a 
+              href="https://www.facebook.com/rojeh.nadaf" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="flex flex-col items-center gap-1"
+            >
+              <div className="bg-blue-600 p-3 rounded-full">
+                <Facebook className="h-5 w-5 text-white" />
+              </div>
+              <span className="text-xs text-gray-500">פייסבוק</span>
+            </a>
+            
+            <a 
+              href="https://www.tiktok.com/@rojehnadaf_realestate" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="flex flex-col items-center gap-1"
+            >
+              <div className="bg-black p-3 rounded-full">
+                <ExternalLink className="h-5 w-5 text-white" />
+              </div>
+              <span className="text-xs text-gray-500">טיקטוק</span>
+            </a>
+          </div>
+        </div>
+
+        {/* QR Code */}
+        <div className="px-6 pb-6 text-center">
+          <h2 className="text-lg font-semibold text-gray-900 mb-3">סרקו לשמירת פרטים</h2>
+          <div className="flex justify-center">
+            {mounted && (
+              <div className="qr-code-container">
+                <QRCode 
+                  value={typeof window !== 'undefined' ? window.location.href : 'https://example.com'} 
+                  size={150}
+                />
+              </div>
+            )}
+          </div>
+        </div>
+
+        {/* Call to Action Buttons */}
+        <div className="px-6 pb-8 space-y-3">
+          <a 
+            href="https://calendly.com/rojehnaddaf" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="block w-full text-center bg-blue-600 text-white py-3 px-4 rounded-xl font-medium transition hover:bg-blue-700"
+          >
+            <div className="flex items-center justify-center gap-2">
+              <Calendar className="h-5 w-5" />
+              <span>קבע פגישה</span>
+            </div>
+          </a>
+
+          <button 
+            onClick={copyToClipboard}
+            className="block w-full text-center border border-gray-300 text-gray-700 py-3 px-4 rounded-xl font-medium transition hover:bg-gray-50"
+          >
+            <div className="flex items-center justify-center gap-2">
+              <Share2 className="h-5 w-5" />
+              <span>שתף כרטיס ביקור</span>
+            </div>
+          </button>
+
+          {showCopiedAlert && (
+            <div className="fixed bottom-4 right-1/2 transform translate-x-1/2 bg-gray-800 text-white px-4 py-2 rounded shadow-lg text-sm">
+              הקישור הועתק!
+            </div>
+          )}
+        </div>
+      </div>
     </div>
   );
 }
