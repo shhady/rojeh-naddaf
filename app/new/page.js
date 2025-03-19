@@ -85,8 +85,8 @@ export default function PremiumCard() {
             <Image
               src="/rojeh-profile.jpg"
               alt="רוג'ה נדאף"
-              width={160}
-              height={160}
+              width={200}
+              height={200}
               className="rounded-full object-cover"
             />
           </motion.div>
