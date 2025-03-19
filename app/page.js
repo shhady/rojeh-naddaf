@@ -426,7 +426,7 @@ export default function PremiumCard() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={toggleQrModal}
-            className="fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center p-4 z-50"
+            className="fixed inset-0 bg-gray-900 bg-opacity-20s flex items-center justify-center p-4 z-50"
           >
             <motion.div
               initial={{ scale: 0.9, opacity: 0 }}
