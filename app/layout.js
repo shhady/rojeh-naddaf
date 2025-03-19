@@ -34,7 +34,7 @@ export default function RootLayout({ children }) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
         <meta name="theme-color" content="#4f46e5" />
         
-        {/* Explicit Open Graph tags for WhatsApp */}
+        {/* Explicit Open Graph tags for social sharing */}
         <meta property="og:title" content="רוג'יה נדאף | יועץ ומשווק נדל״ן" />
         <meta property="og:description" content="אתכם כל הדרך לעסקה מוצלחת" />
         <meta property="og:image" content="https://rojeh-nadaf.vercel.app/og-image.png" />
@@ -43,6 +43,20 @@ export default function RootLayout({ children }) {
         <meta property="og:url" content="https://rojeh-nadaf.vercel.app" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="רוג'יה נדאף" />
+        
+        {/* Facebook specific meta tags */}
+        <meta property="fb:app_id" content="your-fb-app-id-if-you-have-one" />
+        
+        {/* Instagram and additional sharing meta tags */}
+        <meta property="og:image:secure_url" content="https://rojeh-nadaf.vercel.app/og-image.png" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:locale" content="he_IL" />
+        
+        {/* Twitter card data - sometimes helps with Instagram */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="רוג'יה נדאף | יועץ ומשווק נדל״ן" />
+        <meta name="twitter:description" content="אתכם כל הדרך לעסקה מוצלחת" />
+        <meta name="twitter:image" content="https://rojeh-nadaf.vercel.app/og-image.png" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${heebo.variable} antialiased`}
