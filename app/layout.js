@@ -19,7 +19,7 @@ const heebo = Heebo({
 
 
 export const metadata = {
-  title: "רוג'יה נדאף | יועץ ומשווק נדל״ן | כרטיס ביקור דיגיטלי",
+  title: "רוג'יה נדאף | יועץ ומשווק נדל״ן \n כרטיס ביקור דיגיטלי",
   description: 'אתכם כל הדרך לעסקה מוצלחת',
   manifest: '/site.webmanifest',
   metadataBase: new URL(
@@ -38,10 +38,10 @@ export const metadata = {
   authors: [{ name: 'Shhady Serhan' }],
   creator: 'Shhady Serhan',
   openGraph: {
-    title: 'רוג\'יה נדאף | יועץ ומשווק נדל״ן | כרטיס ביקור דיגיטלי',
+    title: 'רוג\'יה נדאף | יועץ ומשווק נדל״ן \n כרטיס ביקור דיגיטלי',
     description: 'אתכם כל הדרך לעסקה מוצלחת',
     url: '/',
-    siteName: 'רוג\'יה נדאף | יועץ ומשווק נדל״ן | כרטיס ביקור דיגיטלי',
+    siteName: 'רוג\'יה נדאף | יועץ ומשווק נדל״ן \n כרטיס ביקור דיגיטלי',
     images: [
       {
         url: '/og-image.png',
