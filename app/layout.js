@@ -19,7 +19,7 @@ const heebo = Heebo({
 
 
 export const metadata = {
-  title: "רוג'יה נדאף | יועץ ומשווק נדל״ן \n כרטיס ביקור דיגיטלי",
+  title: "רוג'יה נדאף | יועץ ומשווק נדל״ן | כרטיס ביקור דיגיטלי",
   description: 'אתכם כל הדרך לעסקה מוצלחת',
   manifest: '/site.webmanifest',
   metadataBase: new URL(
@@ -38,10 +38,10 @@ export const metadata = {
   authors: [{ name: 'Shhady Serhan' }],
   creator: 'Shhady Serhan',
   openGraph: {
-    title: 'רוג\'יה נדאף | יועץ ומשווק נדל״ן \n כרטיס ביקור דיגיטלי',
+    title: 'רוג\'יה נדאף | יועץ ומשווק נדל״ן | כרטיס ביקור דיגיטלי',
     description: 'אתכם כל הדרך לעסקה מוצלחת',
     url: '/',
-    siteName: 'רוג\'יה נדאף | יועץ ומשווק נדל״ן \n כרטיס ביקור דיגיטלי',
+    siteName: 'רוג\'יה נדאף | יועץ ומשווק נדל״ן | כרטיס ביקור דיגיטלי',
     images: [
       {
         url: '/og-image.png',
@@ -70,7 +70,7 @@ export default function RootLayout({ children }) {
         <link rel="manifest" href="/site.webmanifest" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
         <meta name="theme-color" content="#4f46e5" />
-        <meta property="og:site_name" content="רוג'יה נדאף | יועץ ומשווק נדל״ן \n כרטיס ביקור דיגיטלי" />
+        <meta property="og:site_name" content="רוג'יה נדאף | יועץ ומשווק נדל״ן | כרטיס ביקור דיגיטלי" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${heebo.variable} antialiased`}

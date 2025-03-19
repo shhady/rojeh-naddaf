@@ -26,8 +26,8 @@ export default function PremiumCard() {
     if (typeof navigator !== 'undefined' && navigator.share) {
       try {
         await navigator.share({
-          title: 'רוג\'יה נדאף | יועץ ומשווק נדל״ן \nכרטיס ביקור דיגיטלי',
-          text: 'כרטיס ביקור דיגיטלי - רוג\'יה נדאף, יועץ ומשווק נדל״ן\n   ',
+          title: "רוג'יה נדאף | יועץ ומשווק נדל״ן | כרטיס ביקור דיגיטלי",
+          text: ` ביקור דיגיטלי - רוג'יה נדאף, יועץ ומשווק נדל״ן כרטיס  `,
           url: url,
         });
       } catch (error) {
