@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import QRCode from 'react-qr-code';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Phone, Mail, Calendar, Share2, Facebook, Instagram, ExternalLink, ArrowRight, Info, User, MapPin, Youtube } from 'lucide-react';
+import { Phone, Mail, Calendar, Share2, Facebook, Instagram, ExternalLink, ArrowRight, Info, User, MapPin, Youtube, UserPlus } from 'lucide-react';
 import { FaWhatsapp, FaTiktok, FaYoutube } from 'react-icons/fa';
 
 export default function PremiumCard() {
@@ -204,6 +204,20 @@ export default function PremiumCard() {
                   <div>
                     <div className="font-medium text-gray-900">קטלוג נכסים</div>
                     <div className="text-sm text-gray-500">לחצו לצפייה בהיצע הנכסים</div>
+                  </div>
+                </a>
+
+                <a
+                  href="/rojeh-naddaf.vcf"
+                  download
+                  className="flex items-center gap-4 p-4 rounded-2xl bg-gradient-to-r from-purple-50 to-purple-100 shadow-sm hover:shadow-md transition-shadow"
+                >
+                  <div className="p-3 bg-gradient-to-r from-purple-600 to-purple-700 rounded-full shadow-md">
+                    <UserPlus className="h-5 w-5 text-white" />
+                  </div>
+                  <div>
+                    <div className="font-medium text-gray-900">הוסף לאנשי הקשר</div>
+                    <div className="text-sm text-gray-500">שמירת פרטי יצירת הקשר במכשיר</div>
                   </div>
                 </a>
               </motion.div>
