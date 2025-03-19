@@ -35,10 +35,10 @@ export const metadata = {
     locale: 'he_IL',
     url: 'https://rojeh-naddaf.vercel.app/',
     title: 'רוג\'יה נדאף | יועץ ומשווק נדל״ן',
-    description: 'כרטיס ביקור דיגיטלי מקצועי עבור רוג\'יה נדאף, יועץ הנדל״ן האמין שלך.',
+    description: 'הבחירה הנכונה בעולם הנדל״ן כרטיס ביקור דיגיטלי"',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/rojeh-profile.jpg',
         width: 1200,
         height: 630,
         alt: 'רוג\'יה נדאף, יועץ ומשווק נדל״ן'
@@ -48,8 +48,8 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'רוג\'יה נדאף | יועץ ומשווק נדל״ן',
-    description: 'כרטיס ביקור דיגיטלי מקצועי עבור רוג\'יה נדאף, יועץ הנדל״ן האמין שלך.',
-    images: ['/og-image.jpg']
+    description: 'הבחירה הנכונה בעולם הנדל״ן כרטיס ביקור דיגיטלי"',
+      images: ['/rojeh-profile.jpg']
   }
 };
 
