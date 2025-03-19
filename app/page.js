@@ -6,7 +6,7 @@ import QRCode from 'react-qr-code';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Phone, Mail, Calendar, Share2, Facebook, Instagram, ExternalLink, ArrowRight, Info, User, MapPin, Youtube, UserPlus, QrCode, X } from 'lucide-react';
 import { FaWhatsapp, FaTiktok, FaYoutube } from 'react-icons/fa';
-import { BiLike } from "react-icons/bi";
+import { MdVerified } from "react-icons/md";
 export default function PremiumCard() {
   const [mounted, setMounted] = useState(false);
   const [showCopiedAlert, setShowCopiedAlert] = useState(false);
@@ -310,7 +310,7 @@ export default function PremiumCard() {
                 className="space-y-6"
               >
                 <p className="text-center text-gray-600 mb-6 flex items-center justify-center gap-2">
-              <div>  <BiLike className="text-blue-500 h-4 w-4" /></div>עקבו אחריי ברשתות החברתיות 
+              עקבו אחריי ברשתות החברתיות <div>  <MdVerified className="text-blue-500 h-4 w-4" /></div>
                 </p>
                 
                 <div className="grid grid-cols-2 gap-4">
