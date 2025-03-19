@@ -17,11 +17,40 @@ export default function PremiumCard() {
     setMounted(true);
   }, []);
 
+  // Handle share functionality with Web Share API
+  const handleShare = async () => {
+    const url = typeof window !== 'undefined' ? window.location.href : '';
+    
+    // Use Web Share API if available
+    if (typeof navigator !== 'undefined' && navigator.share) {
+      try {
+        await navigator.share({
+          title: 'רוג\'יה נדאף | יועץ ומשווק נדל״ן',
+          text: 'כרטיס ביקור דיגיטלי - רוג\'יה נדאף, יועץ ומשווק נדל״ן',
+          url: url,
+        });
+      } catch (error) {
+        console.error('Error sharing:', error);
+        // Fall back to clipboard copy if sharing fails
+        copyToClipboard();
+      }
+    } else {
+      // Fall back to clipboard copy if Web Share API is not available
+      copyToClipboard();
+    }
+  };
+
+  // Copy URL to clipboard
   const copyToClipboard = () => {
-    if (typeof window !== 'undefined') {
-      navigator.clipboard.writeText(window.location.href);
-      setShowCopiedAlert(true);
-      setTimeout(() => setShowCopiedAlert(false), 2000);
+    if (typeof window !== 'undefined' && navigator.clipboard) {
+      navigator.clipboard.writeText(window.location.href)
+        .then(() => {
+          setShowCopiedAlert(true);
+          setTimeout(() => setShowCopiedAlert(false), 2000);
+        })
+        .catch(err => {
+          console.error('Failed to copy:', err);
+        });
     }
   };
 
@@ -393,12 +422,12 @@ export default function PremiumCard() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
-            onClick={copyToClipboard}
+            onClick={handleShare}
             className="block w-full text-center border border-gray-200 bg-white text-gray-700 py-3.5 px-4 rounded-xl font-medium transition-all hover:bg-gray-50 hover:shadow-md"
           >
             <div className="flex items-center justify-center gap-2">
               <Share2 className="h-5 w-5" />
-              <span>שיתוף כרטיס הביקור</span>
+              <span>{showCopiedAlert ? 'הקישור הועתק בהצלחה!' : 'שיתוף כרטיס הביקור'}</span>
             </div>
           </motion.button>
         </div>
