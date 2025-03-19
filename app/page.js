@@ -310,7 +310,7 @@ export default function PremiumCard() {
                 className="space-y-6"
               >
                 <p className="text-center text-gray-600 mb-6 flex items-center justify-center gap-2">
-              עקבו אחריי ברשתות החברתיות <div>  <MdVerified className="text-blue-500 h-4 w-4" /></div>
+              עקבו אחריי ברשתות החברתיות   <MdVerified className="text-blue-500 h-4 w-4" />
                 </p>
                 
                 <div className="grid grid-cols-2 gap-4">

@@ -17,36 +17,47 @@ const heebo = Heebo({
   variable: "--font-heebo",
 });
 
+
 export const metadata = {
-  title: {
-    default: "רוג'יה נדאף | יועץ ומשווק נדל״ן",
-    template: "%s | רוג'יה נדאף"
-  },
-  description: "הבחירה הנכונה בעולם הנדל״ן \nכרטיס ביקור דיגיטלי",
-  keywords: "נדל״ן, יועץ נדל״ן, רוג'יה נדאף, רימקס, סוכן נדל״ן חיפה, נכסים למכירה, חיפה",
-  manifest: "/manifest.json",
-  icons: {
-    icon: '/favicon.ico',
-    shortcut: '/favicon.ico',
-    apple: '/apple-touch-icon.png',
-  },
+  title: "רוג'יה נדאף | יועץ ומשווק נדל״ן",
+  description: 'אתכם כל הדרך לעסקה מוצלחת',
+  manifest: '/site.webmanifest',
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_BASE_URL || 'https://rojeh-nadaf.vercel.app'
+  ),
+  keywords: [
+    'נדל״ן',
+    'יצירת נדל״ן',
+    'מכירה נדל״ן',
+    'רוג\'יה נדאף',
+    'רימקס',
+    'סוכן נדל״ן חיפה',
+    'נכסים למכירה',
+    'חיפה',
+  ],
+  authors: [{ name: 'Shhady Serhan' }],
+  creator: 'Shhady Serhan',
   openGraph: {
-    type: 'website',
-    locale: 'he_IL',
-    url: 'https://rojeh-naddaf.vercel.app/',
     title: 'רוג\'יה נדאף | יועץ ומשווק נדל״ן',
-    description: 'הבחירה הנכונה בעולם הנדל״ן \nכרטיס ביקור דיגיטלי',
+    description: 'אתכם כל הדרך לעסקה מוצלחת',
+    url: '/',
+    siteName: 'רוג\'יה נדאף | יועץ ומשווק נדל״ן',
     images: [
       {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'רוג\'יה נדאף, יועץ ומשווק נדל״ן'
-      }
-    ]
-  }
+          alt: 'תמונת כיסוי',
+      },
+    ],
+    locale: 'he_IL',
+    type: 'website',
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
-
 export default function RootLayout({ children }) {
   return (
     <html lang="he" dir="rtl">
