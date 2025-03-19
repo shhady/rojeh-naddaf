@@ -350,7 +350,7 @@ export default function PremiumCard() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            href="https://calendly.com/rojehnaddaf" 
+            href="https://calendly.com/rojeh-n9/30min" 
             target="_blank" 
             rel="noopener noreferrer" 
             className="block w-full text-center bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-3.5 px-4 rounded-xl font-medium transition-all hover:shadow-lg hover:from-blue-700 hover:to-indigo-700"
