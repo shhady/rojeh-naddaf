@@ -6,7 +6,7 @@ import QRCode from 'react-qr-code';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Phone, Mail, Calendar, Share2, Facebook, Instagram, ExternalLink, ArrowRight, Info, User, MapPin, Youtube, UserPlus, QrCode, X } from 'lucide-react';
 import { FaWhatsapp, FaTiktok, FaYoutube } from 'react-icons/fa';
-import { MdVerified } from "react-icons/md";
+import { BiLike } from "react-icons/bi";
 export default function PremiumCard() {
   const [mounted, setMounted] = useState(false);
   const [showCopiedAlert, setShowCopiedAlert] = useState(false);
@@ -310,10 +310,22 @@ export default function PremiumCard() {
                 className="space-y-6"
               >
                 <p className="text-center text-gray-600 mb-6 flex items-center justify-center gap-2">
-                  עקבו אחריי ברשתות החברתיות <MdVerified className="text-blue-500 h-4 w-4" />
+              <div>  <BiLike className="text-blue-500 h-4 w-4" /></div>עקבו אחריי ברשתות החברתיות 
                 </p>
                 
                 <div className="grid grid-cols-2 gap-4">
+                 
+                  <a 
+                    href="https://www.facebook.com/rojeh.nadaf" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="flex flex-col items-center gap-2 p-5 rounded-2xl bg-gradient-to-r from-blue-50 to-indigo-50 shadow-sm hover:shadow-md transition-shadow"
+                  >
+                    <div className="p-3 bg-gradient-to-r from-blue-600 to-blue-700 rounded-full shadow-md">
+                      <Facebook className="h-6 w-6 text-white" />
+                    </div>
+                    <span className="font-medium text-gray-900">פייסבוק</span>
+                  </a>
                   <a 
                     href="https://www.instagram.com/rojehna_realestate" 
                     target="_blank" 
@@ -326,29 +338,7 @@ export default function PremiumCard() {
                     <span className="font-medium text-gray-900">אינסטגרם</span>
                   </a>
                   
-                  <a 
-                    href="https://www.facebook.com/rojeh.nadaf" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="flex flex-col items-center gap-2 p-5 rounded-2xl bg-gradient-to-r from-blue-50 to-indigo-50 shadow-sm hover:shadow-md transition-shadow"
-                  >
-                    <div className="p-3 bg-gradient-to-r from-blue-600 to-blue-700 rounded-full shadow-md">
-                      <Facebook className="h-6 w-6 text-white" />
-                    </div>
-                    <span className="font-medium text-gray-900">פייסבוק</span>
-                  </a>
-                  
-                  <a 
-                    href="https://www.tiktok.com/@rojehnadaf_realestate" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="flex flex-col items-center gap-2 p-5 rounded-2xl bg-gradient-to-r from-gray-50 to-gray-100 shadow-sm hover:shadow-md transition-shadow"
-                  >
-                    <div className="p-3 bg-black rounded-full shadow-md">
-                      <FaTiktok className="h-6 w-6 text-white" />
-                    </div>
-                    <span className="font-medium text-gray-900">טיקטוק</span>
-                  </a>
+                 
                   
                   <a 
                     href="https://youtube.com/@rojehnadaf-realestate?si=sMwP-YfYk0j5rJLE" 
@@ -360,6 +350,17 @@ export default function PremiumCard() {
                       <FaYoutube className="h-6 w-6 text-white" />
                     </div>
                     <span className="font-medium text-gray-900">יוטיוב</span>
+                  </a>
+                  <a 
+                    href="https://www.tiktok.com/@rojehnadaf_realestate" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="flex flex-col items-center gap-2 p-5 rounded-2xl bg-gradient-to-r from-gray-50 to-gray-100 shadow-sm hover:shadow-md transition-shadow"
+                  >
+                    <div className="p-3 bg-black rounded-full shadow-md">
+                      <FaTiktok className="h-6 w-6 text-white" />
+                    </div>
+                    <span className="font-medium text-gray-900">טיקטוק</span>
                   </a>
                 </div>
               </motion.div>
