@@ -2,8 +2,9 @@
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import QRCode from "react-qr-code";
-import { Phone, Mail, Send, Share2, Calendar, Copy, ExternalLink, Facebook } from "lucide-react";
+import { Phone, Mail, Send, Share2, Calendar, Copy, ExternalLink, Facebook, Sparkles } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
+import Link from "next/link";
 
 export default function Home() {
   const [mounted, setMounted] = useState(false);
@@ -24,6 +25,17 @@ export default function Home() {
 
   return (
     <div dir="rtl" className="min-h-screen bg-gray-50 py-10 px-4 sm:px-6">
+      {/* Premium Version Link */}
+      <div className="max-w-md mx-auto mb-4">
+        <Link 
+          href="/new" 
+          className="flex items-center justify-center gap-2 bg-gradient-to-r from-purple-600 to-indigo-600 text-white py-2 px-4 rounded-xl font-medium shadow-md hover:shadow-lg transition-all"
+        >
+          <Sparkles className="h-4 w-4" />
+          <span>צפה בגרסה הפרימיום</span>
+        </Link>
+      </div>
+      
       <div className="max-w-md mx-auto bg-white rounded-2xl shadow-lg overflow-hidden">
         {/* Cover Image */}
         <div className="relative h-40 w-full">
@@ -97,7 +109,7 @@ export default function Home() {
               </div>
               <span className="font-medium text-gray-700">אימייל</span>
             </div>
-            <span className="text-gray-500 text-sm">rojeh@example.com</span>
+            <span className="text-gray-500 text-sm">Rojeh.n9@gmail.com</span>
           </a>
         </div>
 
