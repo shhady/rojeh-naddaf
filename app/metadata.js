@@ -3,7 +3,7 @@ export const metadata = {
   description: 'אתכם כל הדרך לעסקה מוצלחת',
   manifest: '/site.webmanifest',
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_BASE_URL || 'https://rojeh-nadaf.vercel.app'
+    process.env.NEXT_PUBLIC_BASE_URL || 'https://rojeh-nadaf.com'
   ),
   keywords: [
     'נדל\"ן',
